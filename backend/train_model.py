@@ -8,15 +8,15 @@ from sklearn.metrics import classification_report, accuracy_score
 import joblib
 
 # ====== CONFIG ======
-DATA_PATH = "combined_data.xlsx"   # your dataset file
+DATA_PATH = "combined_data_2_cleaned.xlsx"   # your dataset file
 MODEL_PATH = "model.joblib"   # output model file
 
 # ====== LOAD DATA ======
 df = pd.read_excel(DATA_PATH)
 
 # auto-detect columns
-statement_col = df.select_dtypes(include="object").columns[1]
-status_col = df.columns[2] 
+statement_col = df.select_dtypes(include="object").columns[0]
+status_col = df.columns[1] 
 #if df.columns[1] == statement_col else df.columns[1]
 
 print(f"Detected statement column: {statement_col}")
